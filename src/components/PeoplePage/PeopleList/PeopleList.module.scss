@@ -8,13 +8,13 @@
 
 .list__item {
     width: 190px;
-    margin: 20px;
-    border-radius: 5px;
-    background-color: #ffffff;
+    margin: var(--spacing-medium);
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-white);
     cursor: pointer;
     & a {
         text-decoration: none;
-        color: black;
+        color: var(--color-black);
         text-align: center;
     }
 }
@@ -24,10 +24,9 @@
     height: 250px;
     object-fit: cover;
     object-position: top center;
-    border-radius: 5px 5px 0 0;
+    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
 }
 
 .person__text {
-    text-transform: uppercase;
     font-weight: bold;
 }
