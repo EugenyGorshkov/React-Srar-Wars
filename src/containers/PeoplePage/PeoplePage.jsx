@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
+import PeopleList from '@components/PeoplePage/PeopleList';
 import { withErrorApi } from '@hoc-helpers/withErrorApi'
 import { getApiResource } from '@utils/network';
 import { API_PEOPLE } from '@constants/api';
 import { getPeopleId, getPeopleImage } from '@services/getPeopleData';
-import PeopleList from '@components/PeoplePage/PeopleList';
 
 import styles from './PeoplePage.module.scss';
 
@@ -46,6 +47,10 @@ const PeoplePage = ({ setErrorApi }) => {
             {people && <PeopleList people={people} />}
         </>
     )
+}
+
+PeoplePage.propTypes = {
+    setErrorApi: PropTypes.func
 }
 
 export default withErrorApi(PeoplePage);
