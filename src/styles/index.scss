@@ -6,14 +6,26 @@
 
   --spacing-medium: 20px;
 
+  --transition: .4ms;
+
   --font-famaly-main: sans-serif;
 
   --font-size-header: 26px;
 
   --border-radius-small: 5px;
+
+  --theme-default-header: #cccc46;
 }
 
 body {
   background-color: var(--color-dark-gray);
   font-family: var(--font-famaly-main);
+}
+
+.header__text {
+  line-height: 1.7;
+  font-size: var(--font-size-header);
+  text-shadow: 0 0 2px #000;
+  color: var(--theme-default-header);
+  transition: color var(--transition);
 }
