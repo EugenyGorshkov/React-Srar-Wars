@@ -1,9 +1,9 @@
-.link {
-    margin: 5px;
+.container {
+    display: flex;
+    justify-content: center;
 }
 
-.button {
-    padding: 10px 20px;
-    font-size: 18px;
+.buttons {
+    margin: var(--spacing-small);
 
 }
