@@ -45,19 +45,9 @@ export const getApiResource = async (url) => {
 // getApiResource(SWAPI_ROOT+SWAPI_PEOPLE)
 //     .then(body => console.log(body))
 
-
-
-
-
-
-
-
-
-
-// export const getApiResource = (url) => {
-//     fetch(url)
-//         .then(res => res.json())
-//         .then(res => console.log(res))
-//         .catch(error => console.log(error.message))
-    
-// }
+export const makeConcurrentRequest = async (urls) => {
+    const res = await Promise.all(urls.map(async res => {
+        return fetch(res).then(res => res.json())
+    }))
+    return res;
+}

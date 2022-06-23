@@ -4,6 +4,8 @@ import { useParams } from 'react-router';
 
 import PersonInfo from '@components/PersonPage/PersonInfo';
 import PersonPhoto from '@components/PersonPage/PersonPhoto';
+import PersonLinkBack from '@components/PersonPage/PersonLinkBack';
+import PersonFilms from '@components/PersonPage/PersonFilms';
 
 import { getApiResource } from '@utils/network';
 import { getPeopleImage } from '@services/getPeopleData';
@@ -24,7 +26,6 @@ const PersonPage = ({ setErrorApi }) => {
         (async () => {
 
             const res = await getApiResource(`${API_PERSON}/${id}/`);
-            console.log(res)
             if (res) {
                 setPersonInfo([
                     { title: 'Birth year', data: res.birth_year },
@@ -36,8 +37,10 @@ const PersonPage = ({ setErrorApi }) => {
                     { title: 'Eye color', data: res.eye_color },
                     
                 ]);
-                setPersonName(res.name)
-                setPersonPhoto(getPeopleImage(id))
+                setPersonName(res.name);
+                setPersonPhoto(getPeopleImage(id));
+
+                res.films.length && setPersonFilms(res.films);
 
                 setErrorApi(false);
             } else {
@@ -48,6 +51,8 @@ const PersonPage = ({ setErrorApi }) => {
 
     return (
         <>
+            <PersonLinkBack />
+            
             <div className={styles.wrapper}>
                 <span className={styles.person__name}>{personName}</span>
                 <div className={styles.container}>
@@ -58,6 +63,10 @@ const PersonPage = ({ setErrorApi }) => {
 
                     {personInfo && (
                         <PersonInfo personInfo={personInfo}/>
+                    )}
+
+                    {personFilms && (
+                        <PersonFilms personFilms={personFilms}/>
                     )}
                 </div>
             </div>
