@@ -1,0 +1,20 @@
+.link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 15px;
+    font-weight: var(--font-bold);
+    color: var(--color-yellow);
+    text-decoration: none;
+
+}
+
+.link__img {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.link__text {
+    padding-left: var(--spacing-ultrasmall);
+}

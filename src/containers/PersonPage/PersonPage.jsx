@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 
 import PersonInfo from '@components/PersonPage/PersonInfo';
 import PersonPhoto from '@components/PersonPage/PersonPhoto';
+import PersonLinkBack from '@components/PersonPage/PersonLinkBack';
 
 import { getApiResource } from '@utils/network';
 import { getPeopleImage } from '@services/getPeopleData';
@@ -48,6 +49,8 @@ const PersonPage = ({ setErrorApi }) => {
 
     return (
         <>
+            <PersonLinkBack />
+            
             <div className={styles.wrapper}>
                 <span className={styles.person__name}>{personName}</span>
                 <div className={styles.container}>
