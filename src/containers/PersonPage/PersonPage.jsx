@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router';
+import { useSelector } from 'react-redux';
 
 import PersonInfo from '@components/PersonPage/PersonInfo';
 import PersonPhoto from '@components/PersonPage/PersonPhoto';
@@ -17,17 +18,24 @@ import styles from './PersonPage.module.scss';
 const PersonFilms = React.lazy(() => import('@components/PersonPage/PersonFilms'));
 
 const PersonPage = ({ setErrorApi }) => {
+    const [personId, setPersonId] = useState(null);
     const [personInfo, setPersonInfo] = useState(null);
     const [personName, setPersonName] = useState(null);
     const [personPhoto, setPersonPhoto] = useState(null);
     const [personFilms, setPersonFilms] = useState(null);
+    const [personFavorite, setPersonFavorite] = useState(false);
 
-    const { id } = useParams();
+    const storeData = useSelector(state => state.favoriteReducer);
+
+    const { id } = useParams(); 
 
     useEffect(() => {
-        (async () => {
-
+        (async () => { 
             const res = await getApiResource(`${API_PERSON}/${id}/`);
+
+            storeData[id] ? setPersonFavorite(true) : setPersonFavorite(false);
+            setPersonId(id)
+
             if (res) {
                 setPersonInfo([
                     { title: 'Birth year', data: res.birth_year },
@@ -61,6 +69,9 @@ const PersonPage = ({ setErrorApi }) => {
                     <PersonPhoto 
                         personPhoto={personPhoto} 
                         personName={personName}
+                        personId={personId}
+                        personFavorite={personFavorite}
+                        setPersonFavorite={setPersonFavorite}
                     />
 
                     {personInfo && (
