@@ -32,3 +32,11 @@
         text-shadow: none;
     }
 }
+
+.logo {
+    height: 60px;
+    width: 60px;
+    margin-right: var(--spacing-large);
+    object-fit: cover;
+    object-position: center center;
+}
