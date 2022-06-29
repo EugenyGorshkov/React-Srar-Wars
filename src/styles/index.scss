@@ -54,14 +54,15 @@
 
   --theme-default-header: var(--theme-neitral-header);
 
-  --theme-light-bg-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);;
-  --theme-dark-bg-image:  linear-gradient(to right top, #7c0000, #770020, #680034, #541440, #3d1e44);;
+  --theme-light-bg-image: linear-gradient(to left top, #5e66d1, #0088e7, #009dce, #00ab95, #2ab154);
+  --theme-dark-bg-image: linear-gradient(to left top, #ff0000, #d10015, #a3011a, #760a19, #4a0d14, #370d11, #25090a, #120001, #0e0001, #0a0001, #050001, #000000);
   --theme-neitral-bg-image: url(../static/bg.jpg);
 
   --theme-default-bg-image: var(--theme-neitral-bg-image);
+}
 
-
-
+*, ::after, ::before {
+  box-sizing: border-box;
 }
 
 body {
