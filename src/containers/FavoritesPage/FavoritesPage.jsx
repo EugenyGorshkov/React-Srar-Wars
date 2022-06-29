@@ -23,7 +23,6 @@ const FavoritesPage = () => {
             })
 
             setPeople(res)
-            console.log(res)
         }
 
     }, [])

@@ -6,6 +6,7 @@ import loaderBlack from './img/loader-black.svg'
 import loaderWhite from './img/loader-white.svg'
 import loaderBlue from './img/loader-blue.svg'
 
+import '../index.scss';
 import styles from './UiLoading.module.scss'
 
 const UiLoading = ({ 
