@@ -1,10 +1,10 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom';
 
 import Header from '@components/Header/Header';
-import routesConfig from '@routes/routesConfig'
+import routesConfig from '@routes/routesConfig';
 
-import styles from './App.module.scss'
+import styles from './App.module.scss';
 
 const App = () => {
   return (
