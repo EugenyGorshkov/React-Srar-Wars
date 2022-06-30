@@ -26,6 +26,7 @@ const favoriteReducer = (state = initialState, action) => {
                 ...state,
                 ...action.payload
             }
+            
         case REMOVE_PERSON_FROM_FAVORITE:
             return omit(state, [action.payload])
         default:
