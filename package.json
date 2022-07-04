@@ -19,14 +19,14 @@
     "sass": "^1.52.3"
   },
   "scripts": {
+    "deploy": "npm run build && npm run build-storybook && npm run build-gh-pages",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
+    "build-gh-pages": "gh-pages -d build",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "deploy": "npm run build && npm run build-gh-pages",
-    "build-gh-pages": "gh-pages -d build"
+    "build-storybook": "build-storybook -o ./build/storybook"
   },
   "eslintConfig": {
     "extends": [
