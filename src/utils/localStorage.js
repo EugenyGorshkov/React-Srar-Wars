@@ -1,7 +1,7 @@
 export const getLocalStorage = (key) => {
     const data = localStorage.getItem(key);
 
-    if(data !== null) {
+    if(data !== null || undefined) {
         return JSON.parse(data);
     }
 
