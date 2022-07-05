@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes, { element } from 'prop-types';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import cn from 'classnames'
 
 import { useTheme, THEME_LIGHT, THEME_DARK, THEME_NEITRAL } from '@context/ThemeProvider';
+import { getLocalStorage } from '@utils/localStorage';
 
 import imgLightSide from './img/light-side.jpg'
 import imgDarkSide from './img/dark-side.jpg'
@@ -17,6 +18,14 @@ const ChooseSideItem = ({
     img 
 }) => {
     const isTheme = useTheme();
+
+    const setLocalTheme = () => {
+        return getLocalStorage('theme')
+    }
+
+    useEffect(() => {
+       isTheme.change(setLocalTheme())
+    })
 
     return (
         <div
@@ -62,20 +71,15 @@ const ChooseSide = () => {
         <div className={styles.container}>
             {elements.map(({theme, text, img, classes}, index) => (  
                 <ChooseSideItem
-                key={index}
-                theme={theme}
-                text={text}
-                img={img}
-                classes={classes}
+                    key={index}
+                    theme={theme}
+                    text={text}
+                    img={img}
+                    classes={classes}
                 />
             ))}
         </div>
     )
-}
-
-
-ChooseSide.propTypes = {
-    // testProp: PropTypes.text
 }
 
 export default ChooseSide;
