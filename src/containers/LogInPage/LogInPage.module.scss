@@ -1,0 +1,16 @@
+.login_wrapper {
+    max-width: 300px;
+    margin: 100px auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+.text {
+    color: var(--color-white);
+    font-size: var(--font-size-main);
+    font-weight: var(--font-bold);
+}

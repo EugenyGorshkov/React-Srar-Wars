@@ -36,6 +36,7 @@ const Header = () => {
                 <li><NavLink to='/search'>Search</NavLink></li>
                 <li><NavLink to='/not-found'>Not found</NavLink></li>
                 <li><NavLink to='/fail'>Fail</NavLink></li>
+                <li className={styles.loginEl}><NavLink to='/login'>Log In</NavLink></li>
             </ul>
 
             <Favorite />
