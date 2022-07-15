@@ -45,3 +45,7 @@
 .clear__disabled {
     opacity: .1;
 }
+
+.clear.crossDisabled {
+    visibility: hidden;
+}

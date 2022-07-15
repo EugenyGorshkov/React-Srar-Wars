@@ -1,4 +1,6 @@
 import React from 'react';
+import UiInput from '@ui/UiInput';
+import UiButton from '@ui/UiButton';
 
 import styles from './LogInPage.module.scss'
 
@@ -7,13 +9,21 @@ const LogInPage = () => {
         <>
             <div className={styles.login_wrapper}>
                 <div className={styles.row}>
-                    <span className={styles.text}>Login:</span>
-                    <input type="text" placeholder='email@email.com' />
+                    <span className={styles.text}>Login</span>
+                    <UiInput
+                        crossDisabled={true}
+                    />
                 </div>
                 <div className={styles.row}>
-                    <span className={styles.text}>Password:</span>
-                    <input type="text" placeholder='password...' />
+                    <span className={styles.text}>Password</span>
+                    <UiInput
+                        crossDisabled={true}
+                    />
                 </div>
+                <UiButton
+                    text={'Autorize'}
+                    classes={styles.btn_submit}
+                />
             </div>
         </>
     )
