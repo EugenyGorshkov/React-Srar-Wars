@@ -11,6 +11,7 @@ const UiInput = ({
     value,
     handleInputChange,
     placeholder,
+    crossDisabled,
     classes
 }) => (
     <div className={cn(styles.wrapper__input, classes)}>
@@ -25,7 +26,7 @@ const UiInput = ({
             onClick={() => value && handleInputChange('')}
             className={
                 cn(styles.clear,
-                !value && styles.clear__disabled)
+                !value && styles.clear__disabled, crossDisabled && styles.crossDisabled)
             }
             src={icon} 
             alt="cancel" 
@@ -37,6 +38,7 @@ UiInput.propTypes = {
     value: PropTypes.string,
     handleInputChange: PropTypes.func,
     placeholder: PropTypes.string,
+    crossDisabled: PropTypes.bool,
     classes: PropTypes.string
 }
 

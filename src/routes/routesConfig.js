@@ -5,6 +5,7 @@ import NotFoundPage from '@containers/NotFoundPage';
 import FavoritesPage from '@containers/FavoritesPage';
 import SearchPage from '@containers/SearchPage';
 import ErrorMessage from '@components/ErrorMessage';
+import LogInPage from '../containers/LogInPage';
 
 
 const routesConfig = [
@@ -35,6 +36,10 @@ const routesConfig = [
     {
         path: '/search',
         element: <SearchPage />
+    },
+    {
+        path: '/login',
+        element: <LogInPage />
     },
     {
         path: '*',

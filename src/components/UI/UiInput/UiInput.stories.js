@@ -23,6 +23,7 @@ const Template = (args) => {
 const props = {
     value: '',
     handleInputChange: () => console.log('Input change'),
+    crossHidden: false,
     placeholder: 'placeholder',
     classes: '',
 }
@@ -31,4 +32,11 @@ export const Default = Template.bind({});
 
 Default.args = {
     ...props
+};
+
+export const CrossHidden = Template.bind({});
+
+Default.args = {
+    ...props,
+    crossHidden: true
 };
