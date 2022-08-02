@@ -1,0 +1,1 @@
+export { SearchPageInfo } from './SearchPageInfo';

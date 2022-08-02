@@ -1,22 +1,26 @@
-const { alias } = require('react-app-rewire-alias');
+const path = require('path');
 
-module.exports = function override(config, env) {
-    alias({
-        '@components': 'src/components',
-        '@ui': 'src/components/UI',
-        '@constants': 'src/constants',
-        '@context': 'src/context',
-        '@containers': 'src/containers',
-        '@hoc-helpers': 'src/hoc-helpers',
-        '@hooks': 'src/hooks',
-        '@routes': 'src/routes',
-        '@services': 'src/services',
-        '@static': 'src/static',
-        '@store': 'src/store',
-        '@styles': 'src/styles',
-        '@utils': 'src/utils',
-    })(config);
-    
-    return config;
-}
+module.exports = function override(config) {
+  config.resolve = {
+    ...config.resolve,
+    alias: {
+      ...config.alias,
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@UI': path.resolve(__dirname, 'src/components/UI'),
+      '@constants': path.resolve(__dirname, 'src/constants'),
+      '@context': path.resolve(__dirname, 'src/context'),
+      '@containers': path.resolve(__dirname, 'src/containers'),
+      '@hoc-helpers': path.resolve(__dirname, 'src/hoc-helpers'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@routes': path.resolve(__dirname, 'src/routes'),
+      '@services': path.resolve(__dirname, 'src/services'),
+      '@static': path.resolve(__dirname, 'src/static'),
+      '@store': path.resolve(__dirname, 'src/store'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+    },
+  };
+
+  return config;
+};
   
