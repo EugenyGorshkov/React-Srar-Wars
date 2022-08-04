@@ -1,4 +1,4 @@
-import { HTTP, HTTPS } from "@constants";
+import { HTTP, HTTPS } from "constants/index";
 
 /** 
  * Изменяет url с HTTP на HTTPS

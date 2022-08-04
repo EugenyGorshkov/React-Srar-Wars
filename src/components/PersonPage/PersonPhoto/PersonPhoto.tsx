@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux/es/exports';
-// import { setPersonToFavorite, removePersonFromFavorive } from '@store';
+// import { setPersonToFavorite, removePersonFromFavorive } from 'store';
 
 import iconFavorite from './img/favorite.svg';
 import iconFavoriteFill from './img/favorite-fill.svg';

@@ -3,7 +3,7 @@ import {
     SWAPI_ROOT, SWAPI_PEOPLE, 
     GUIDE_IMG_EXTENTION, URL_IMG_PERSON, 
     SWAPI_PARAM_PAGE
-} from '@constants';
+} from 'constants/index';
 
 //-----------------------------------------------
 // Получить ID страницы для персонажей

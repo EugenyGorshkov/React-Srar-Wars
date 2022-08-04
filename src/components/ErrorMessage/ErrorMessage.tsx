@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { UiVideo } from '@UI';
+import { UiVideo } from 'components/UI';
 import video from './video/han-solo.mp4'
 
 import styles from './ErrorMessage.module.scss'

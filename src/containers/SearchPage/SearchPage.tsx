@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { debounce } from 'lodash'
 
-import { UiInput } from '@UI';
-import { SearchPageInfo } from '@components';
-import { withErrorApi } from '@hoc-helpers'
-import { getApiResource } from '@utils';
-import { API_SEARCH } from '@constants';
-import { getPeopleId, getPeopleImage } from '@services';
+import { UiInput } from 'components/UI';
+import { SearchPageInfo } from 'components/SearchPage';
+import { withErrorApi } from 'hoc-helpers'
+import { getApiResource } from 'utils';
+import { API_SEARCH } from 'constants/index';
+import { getPeopleId, getPeopleImage } from 'services';
 
 import styles from './SearchPage.module.scss';
 

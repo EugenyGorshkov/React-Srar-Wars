@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { UiButton } from '@UI';
+import { UiButton } from 'components/UI';
 
 import styles from './PeopleNavigation.module.scss';
 
 interface PeopleNavigationProps {
-    getResource:Function,
-    prevPage:string,
-    nextPage:string,
-    counterPage:number
+    getResource: Function,
+    prevPage: string | null,
+    nextPage: string | null,
+    counterPage: number
 }
 
 const PeopleNavigation:React.FC<PeopleNavigationProps> = ({

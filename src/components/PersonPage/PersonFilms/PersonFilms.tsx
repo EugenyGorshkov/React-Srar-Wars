@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { makeConcurrentRequest, changeHTTP } from '@utils';
+import { makeConcurrentRequest, changeHTTP } from 'utils';
 
 import styles from './PersonFilms.module.scss';
 

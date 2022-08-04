@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChooseSide } from '@components';
+import { ChooseSide } from 'components/HomePage';
 
 import styles from './HomePage.module.scss';
 

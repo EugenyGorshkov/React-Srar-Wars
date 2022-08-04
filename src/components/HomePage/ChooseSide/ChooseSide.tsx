@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import cn from 'classnames'
 
-import { useTheme, THEME_LIGHT, THEME_DARK, THEME_NEITRAL } from '@context';
-import { getLocalStorage } from '@utils';
+import { useTheme, THEME_LIGHT, THEME_DARK, THEME_NEITRAL } from 'context';
+import { getLocalStorage } from 'utils';
 
 import imgLightSide from './img/light-side.jpg';
 import imgDarkSide from './img/dark-side.jpg';

@@ -1,8 +1,8 @@
 import { useState } from "react"
 import React, { useContext } from "react"
 
-import { changeCssVaribles } from "@services";
-import { setLocalStorage } from '@utils';
+import { changeCssVaribles } from "services";
+import { setLocalStorage } from 'utils';
 
 export const THEME_LIGHT = 'light'
 export const THEME_DARK = 'dark'

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { PeopleList } from '@components'
+import { PeopleList } from 'components/PeoplePage'
 
 import styles from './FavoritesPage.module.scss'
 

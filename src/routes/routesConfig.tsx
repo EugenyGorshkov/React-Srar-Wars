@@ -1,11 +1,11 @@
-import { HomePage } from '@containers';
-// import { PeoplePage } from '@containers';
-// import { PersonPage } from '@containers';
-import { NotFoundPage } from '@containers';
-import { FavoritesPage } from '@containers';
-// import { SearchPage } from '@containers';
-import { ErrorMessage } from '@components';
-import { LogInPage } from '@containers';
+import { HomePage } from 'containers/HomePage';
+import { PeoplePage } from 'containers/PeoplePage';
+import { PersonPage } from 'containers/PersonPage';
+import { NotFoundPage } from 'containers/NotFoundPage';
+import { FavoritesPage } from 'containers/FavoritesPage';
+import { SearchPage } from 'containers/SearchPage';
+import { ErrorMessage } from 'components/ErrorMessage';
+import { LogInPage } from 'containers/LogInPage';
 
 
 export const routesConfig = [
@@ -13,14 +13,14 @@ export const routesConfig = [
         path: '/',
         element: <HomePage />
     },
-    // {
-    //     path: '/people',
-    //     element: <PeoplePage />
-    // },
-    // {
-    //     path: '/people/:id',
-    //     element: <PersonPage />
-    // },
+    {
+        path: '/people',
+        element: <PeoplePage />
+    },
+    {
+        path: '/people/:id',
+        element: <PersonPage />
+    },
     {
         path: '/not-found',
         element: <NotFoundPage />

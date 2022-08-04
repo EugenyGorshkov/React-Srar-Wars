@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-import { Favorite } from '@components';
-import { useTheme, THEME_LIGHT, THEME_DARK, THEME_NEITRAL} from '@context';
+import { Favorite } from 'components/Favorite';
+import { useTheme, THEME_LIGHT, THEME_DARK, THEME_NEITRAL} from 'context';
 
 import imgDroid from './img/droid.svg'
 import imgLightsiber from './img/lightsaber.svg'

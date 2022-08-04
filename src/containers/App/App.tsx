@@ -1,10 +1,10 @@
 import React, { useEffect }from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { useTheme } from '@context';
-import { getLocalStorage } from '@utils';
-import { Header } from '@components';
-import { routesConfig } from '@routes';
+import { useTheme } from 'context';
+import { getLocalStorage } from 'utils';
+import { Header } from 'components/Header';
+import { routesConfig } from 'routes';
 
 import styles from './App.module.scss';
 

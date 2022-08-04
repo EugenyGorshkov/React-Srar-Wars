@@ -1,36 +1,40 @@
 import React, { useEffect, useState, Suspense } from 'react';
-import PropTypes from 'prop-types';
 import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
 
-import {PersonInfo} from '@components';
-import {PersonPhoto} from '@components';
-import {PersonLinkBack} from '@components';
-import {UiLoading} from '@UI';
+import { PersonInfo } from 'components/PersonPage';
+import { PersonPhoto } from 'components/PersonPage';
+import { PersonLinkBack } from 'components/PersonPage';
+import { UiLoading } from 'components/UI';
 
-import { getApiResource } from '@utils';
-import { getPeopleImage } from '@services';
-import { API_PERSON } from '@constants';
-import { withErrorApi } from '@hoc-helpers';
+import { getApiResource } from 'utils';
+import { getPeopleImage } from 'services';
+import { API_PERSON } from 'constants/index';
+import { withErrorApi } from 'hoc-helpers';
 
 import styles from './PersonPage.module.scss';
 
-// const PersonFilms = React.lazy(() => import('@components/PersonPage/PersonFilms'));
+// const PersonFilms = React.lazy(() => import('components/PersonPage/PersonFilms'));
 
 interface BaseProps {
     
 }
 
 interface InjectedProps {
-    setErrorApi: (arr0:boolean) => void
+    setErrorApi?: (arr0:boolean) => void
 }
+
+interface IPersonInfo {
+    title: string;
+    data: string
+} 
 
 
 const PersonPage: React.FC<InjectedProps> = ({ setErrorApi }) => {
-    const [personId, setPersonId] = useState(null);
-    const [personInfo, setPersonInfo] = useState(null);
-    const [personName, setPersonName] = useState(null);
-    const [personPhoto, setPersonPhoto] = useState(null);
+    const [personId, setPersonId] = useState('');
+    const [personInfo, setPersonInfo] = useState<IPersonInfo[]>([]);
+    const [personName, setPersonName] = useState('');
+    const [personPhoto, setPersonPhoto] = useState<string>('');
     const [personFilms, setPersonFilms] = useState(null);
     const [personFavorite, setPersonFavorite] = useState(false);
 
@@ -46,24 +50,30 @@ const PersonPage: React.FC<InjectedProps> = ({ setErrorApi }) => {
             // setPersonId(id)
 
             if (res) {
-                // setPersonInfo([
-                //     { title: 'Birth year', data: res.birth_year },
-                //     { title: 'Height', data: res.height },
-                //     { title: 'Mass', data: res.mass },
-                //     { title: 'Gender', data: res.gender },
-                //     { title: 'Skin color', data: res.skin_color },
-                //     { title: 'Hair color', data: res.hair_color },
-                //     { title: 'Eye color', data: res.eye_color },
+                setPersonInfo([
+                    { title: 'Birth year', data: res.birth_year },
+                    { title: 'Height', data: res.height },
+                    { title: 'Mass', data: res.mass },
+                    { title: 'Gender', data: res.gender },
+                    { title: 'Skin color', data: res.skin_color },
+                    { title: 'Hair color', data: res.hair_color },
+                    { title: 'Eye color', data: res.eye_color },
                     
-                // ]);
+                ]);
                 setPersonName(res.name);
-                // setPersonPhoto(getPeopleImage(id));
-
+                if (id !== undefined) {
+                    setPersonPhoto(getPeopleImage(id));
+                }
                 res.films.length && setPersonFilms(res.films);
 
-                setErrorApi(false);
+                if (setErrorApi !== undefined) {
+                    setErrorApi(false);
+                }
+                
             } else {
-                setErrorApi(true);
+                if (setErrorApi !== undefined) {
+                    setErrorApi(true);
+                }
             }
         })();
     }, [])
@@ -75,13 +85,13 @@ const PersonPage: React.FC<InjectedProps> = ({ setErrorApi }) => {
             <div className={styles.wrapper}>
                 <span className={styles.person__name}>{personName}</span>
                 <div className={styles.container}>
-                    {/* <PersonPhoto 
-                        // personPhoto={personPhoto} 
-                        // personName={personName}
-                        // personId={personId}
+                    <PersonPhoto 
+                        personPhoto={personPhoto} 
+                        personName={personName}
+                        personId={personId}
                         personFavorite={personFavorite}
                         setPersonFavorite={setPersonFavorite}
-                    /> */}
+                    />
 
                     {personInfo && (
                         <PersonInfo personInfo={personInfo}/>

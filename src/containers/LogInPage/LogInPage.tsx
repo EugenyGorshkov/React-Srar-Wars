@@ -1,6 +1,6 @@
 import React from 'react';
-import { UiInput } from '@UI';
-import { UiButton } from '@UI';
+import { UiInput } from 'components/UI';
+import { UiButton } from 'components/UI';
 
 import styles from './LogInPage.module.scss'
 
