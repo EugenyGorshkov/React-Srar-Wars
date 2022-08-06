@@ -14,7 +14,7 @@ import { withErrorApi } from 'hoc-helpers';
 
 import styles from './PersonPage.module.scss';
 
-// const PersonFilms = React.lazy(() => import('components/PersonPage/PersonFilms'));
+const PersonFilms = React.lazy(() => import('components/PersonPage/PersonFilms/PersonFilms'));
 
 interface BaseProps {
     
@@ -99,7 +99,7 @@ const PersonPage: React.FC<InjectedProps> = ({ setErrorApi }) => {
 
                     {personFilms && (
                         <Suspense fallback={<UiLoading theme={'white'} isShadow={false}/>}>
-                            {/* <PersonFilms personFilms={personFilms}/> */}
+                            <PersonFilms personFilms={personFilms}/>
                         </Suspense>
                     )}
                 </div>
@@ -108,9 +108,4 @@ const PersonPage: React.FC<InjectedProps> = ({ setErrorApi }) => {
     )
 }
 
-// PersonPage.propTypes = {
-//     setErrorApi: PropTypes.func
-// }
-
-// export default withErrorApi(PersonPage);
-export default PersonPage;
+export default withErrorApi<InjectedProps>(PersonPage);

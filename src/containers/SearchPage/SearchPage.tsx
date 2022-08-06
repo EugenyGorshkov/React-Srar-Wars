@@ -20,7 +20,7 @@ interface BaseProps {
 }
 
 interface InjectedProps {
-    setErrorApi: (arr0:boolean) => void
+    setErrorApi?: (arr0:boolean) => void
 }
 
 
@@ -43,10 +43,14 @@ const SearchPage: React.FC<InjectedProps> = ({ setErrorApi }) => {
                 }
             })
 
-            // setPeople(peopleList);
-            setErrorApi(false)
+            setPeople(peopleList);
+            if (setErrorApi !== undefined) {
+                setErrorApi(false);
+            }
         } else {
-            setErrorApi(true);
+            if (setErrorApi !== undefined) {
+                setErrorApi(true);
+            }
         }
     }
 
@@ -80,5 +84,4 @@ const SearchPage: React.FC<InjectedProps> = ({ setErrorApi }) => {
 }
 
 
-// export default withErrorApi(SearchPage);
-export default SearchPage;
+export default withErrorApi<InjectedProps>(SearchPage);

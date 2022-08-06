@@ -14,4 +14,4 @@ store.subscribe(() => {
     setLocalStorage('store', store.getState().favoriteReducer)
 })
 
-// export default store;
+export default store;

@@ -33,10 +33,10 @@ export const routesConfig = [
         path: '/favorites',
         element: <FavoritesPage />
     },
-    // {
-    //     path: '/search',
-    //     element: <SearchPage />
-    // },
+    {
+        path: '/search',
+        element: <SearchPage />
+    },
     {
         path: '/login',
         element: <LogInPage />
