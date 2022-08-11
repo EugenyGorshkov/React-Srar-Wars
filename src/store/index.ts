@@ -1,2 +1,2 @@
-export * from './constants/actionTypes';
+export * from './actions'
 export { store } from './store'

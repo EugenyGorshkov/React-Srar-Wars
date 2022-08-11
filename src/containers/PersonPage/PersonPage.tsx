@@ -13,6 +13,7 @@ import { API_PERSON } from 'constants/index';
 import { withErrorApi } from 'hoc-helpers';
 
 import styles from './PersonPage.module.scss';
+import { useTypedSelector } from 'hooks/useTypedSelector';
 
 const PersonFilms = React.lazy(() => import('components/PersonPage/PersonFilms/PersonFilms'));
 
@@ -31,14 +32,15 @@ interface IPersonInfo {
 
 
 const PersonPage: React.FC<InjectedProps> = ({ setErrorApi }) => {
-    const [personId, setPersonId] = useState('');
+    const [personId, setPersonId] = useState<string>('');
     const [personInfo, setPersonInfo] = useState<IPersonInfo[]>([]);
     const [personName, setPersonName] = useState('');
     const [personPhoto, setPersonPhoto] = useState<string>('');
     const [personFilms, setPersonFilms] = useState(null);
     const [personFavorite, setPersonFavorite] = useState(false);
 
-    // const storeData = useSelector(state => state.favoriteReducer);
+    // const storeData = useSelector(state => state.favoriteReducer); до TS 
+    const storeData = useTypedSelector(state => state.favoriteReducer)
 
     const { id } = useParams(); 
 
@@ -46,9 +48,14 @@ const PersonPage: React.FC<InjectedProps> = ({ setErrorApi }) => {
         (async () => { 
             const res = await getApiResource(`${API_PERSON}/${id}/`);
 
-            // storeData[id] ? setPersonFavorite(true) : setPersonFavorite(false);
-            // setPersonId(id)
-
+            if (id !== undefined) {
+                storeData[id] ? setPersonFavorite(true) : setPersonFavorite(false);
+            }
+            
+            if (id !== undefined) {
+                setPersonId(id)
+            }
+            
             if (res) {
                 setPersonInfo([
                     { title: 'Birth year', data: res.birth_year },

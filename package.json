@@ -19,6 +19,7 @@
     "react-scripts": "^5.0.1",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
     "sass": "^1.52.3"
   },
@@ -74,6 +75,7 @@
     "@types/node": "14.x",
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
+    "@types/redux-logger": "^3.0.9",
     "babel-plugin-named-exports-order": "^0.0.2",
     "gh-pages": "^4.0.0",
     "react-app-rewire-alias": "^1.1.7",

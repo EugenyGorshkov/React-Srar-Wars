@@ -18,7 +18,7 @@ export const changeHTTP = (url:string) => {
  * @return {Promise} - Promise с результатом запроса
  */
 
-export const getApiResource = async (url:string) => {
+export const getApiResource = async (url:string): Promise<any> => {
     try {
         const res = await fetch(url);
 

@@ -4,26 +4,29 @@ import { useSelector } from 'react-redux';
 import { PeopleList } from 'components/PeoplePage'
 
 import styles from './FavoritesPage.module.scss'
+import { useTypedSelector } from 'hooks/useTypedSelector';
+
 
 
 export const FavoritesPage:React.FC = () => {
-    const [people, setPeople] = useState([]);
+    const [people, setPeople] = useState<any[]>([]);
 
-    // const storeData = useSelector(state => state.favoriteReducer);
+    // const storeData = useSelector(state => state.favoriteReducer); до TS
+    const storeData = useTypedSelector(store => store.favoriteReducer)
 
     useEffect(() => {
-        // const arr = Object.entries(storeData);
+        const arr = Object.entries(storeData);
 
-        // if (arr.length) {
-        //     const res = arr.map(item => {
-        //         return {
-        //             id: item[0],
-        //             ...item[1]
-        //         }
-        //     })
+        if (arr.length) {
+            const res = arr.map(item => {
+                return {
+                    id: item[0],
+                    ...item[1] as []
+                }
+            })
 
-        //     setPeople(res)
-        // }
+            setPeople(res)
+        }
 
     }, [])
 
