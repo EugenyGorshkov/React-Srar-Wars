@@ -7,5 +7,13 @@
 @media screen and (max-width: 1400px) {
     .wrapper {
         padding: var(--spacing-large) var(--spacing-large);
+        max-width: 1000px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        padding: var(--spacing-to-header) var(--spacing-large);
+        max-width: 900px;
     }
 }
