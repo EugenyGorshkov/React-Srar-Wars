@@ -72,6 +72,7 @@ const PersonPage: React.FC<InjectedProps> = ({ setErrorApi }) => {
                     setPersonPhoto(getPeopleImage(id));
                 }
                 res.films.length && setPersonFilms(res.films);
+                
 
                 if (setErrorApi !== undefined) {
                     setErrorApi(false);

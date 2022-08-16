@@ -13,6 +13,10 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
+    @media screen and (max-width: 900px) {
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .item {
@@ -26,6 +30,9 @@
     box-shadow: var(--box-shadow-black);
     transition: var(--transition);
     cursor: pointer;
+    @media screen and (max-width: 900px) {
+        margin-bottom: 15px;
+    }
 }
 
 .item__header {

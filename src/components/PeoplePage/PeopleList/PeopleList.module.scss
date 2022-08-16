@@ -4,6 +4,10 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    @media screen and (max-width:900px) {
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .list__item {
@@ -17,6 +21,14 @@
         color: var(--color-black);
         text-align: center;
     }
+    @media screen and (max-width:900px) {
+        width: 150px;
+        margin: var(--spacing-small);
+    }
+    @media screen and (max-width:424px) {
+        width: 140px;
+        margin: var(--spacing-small);
+    }
 }
 
 .person__img {
@@ -25,6 +37,9 @@
     object-fit: cover;
     object-position: top center;
     border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+    @media screen and (max-width:900px) {
+        height: 200px;
+    }
 }
 
 .person__text {

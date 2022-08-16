@@ -9,6 +9,7 @@ import imgSpaceStaition from './img/space-station.svg';
 
 import styles from './HeaderBurger.module.scss';
 
+
 const HeaderBurger: React.FC = () => {
     const [activeBurger, setActiveBurger] = useState(false);
     const [icon, setIcon] = useState(imgDroid);
@@ -51,7 +52,9 @@ const HeaderBurger: React.FC = () => {
                 <li><NavLink to='/not-found'>Not found</NavLink></li>
                 <li><NavLink to='/fail'>Fail</NavLink></li>
                 <li><NavLink to='/login'>Log In</NavLink></li>
+                <li><NavLink to='/favorites'>Favorites</NavLink></li>
             </ul>
+            
         </div>
 
     )

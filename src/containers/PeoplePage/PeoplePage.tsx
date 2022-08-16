@@ -33,7 +33,7 @@ const PeoplePage:React.FC<InjectedProps> = ({ setErrorApi }) => {
 
     const getResource = async (url: string) => {
         const res = await getApiResource(url)
-        console.log(res);
+        // console.log(res);
         
 
         if (res) {
