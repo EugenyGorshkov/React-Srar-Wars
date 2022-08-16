@@ -8,15 +8,21 @@ interface PersonFilmsProps {
     personFilms: Array<string>
 }
 
+type FilmsResponce = {
+    title: string;
+    episode_id: number;
+
+}
+
 const PersonFilms:React.FC<PersonFilmsProps> = ({ personFilms }) => {
-    const [filmsName, setFilmsName] = useState([]);
+    const [filmsName, setFilmsName] = useState<FilmsResponce[]>([]);
 
     useEffect(() => {
         (async () => {
             const filmsHTTPS = personFilms.map(url => changeHTTP(url));
             const responce = await makeConcurrentRequest(filmsHTTPS);
-
-            // setFilmsName(responce);
+            
+            setFilmsName(responce);
         })();
     },[])
 
@@ -25,8 +31,8 @@ const PersonFilms:React.FC<PersonFilmsProps> = ({ personFilms }) => {
             <div className={styles.wrapper}>
                 <ul className={styles.list__container}>
                     {filmsName
-                    // .sort((a, z) => a.episode_id - z.episode_id)
-                    .map(({ title, episode_id }) => (
+                    .sort((a, z) => a.episode_id - z.episode_id)
+                    .map(({ title, episode_id }:FilmsResponce) => (
                         <li key={episode_id} className={styles.list__item}>
                             <span className={styles.item__episode}>Episode {episode_id}</span>
                             <span className={styles.item__colon}> : </span>

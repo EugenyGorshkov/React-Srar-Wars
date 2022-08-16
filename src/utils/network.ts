@@ -20,7 +20,7 @@ export const changeHTTP = (url:string) => {
 
 export const getApiResource = async (url:string): Promise<any> => {
     try {
-        const res = await fetch(url);
+        const res = await fetch(url); 
 
         if(!res.ok) {
             console.error('Could not fetch.', res.status);

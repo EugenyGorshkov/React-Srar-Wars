@@ -7,6 +7,7 @@ import { Header } from 'components/Header';
 import { routesConfig } from 'routes';
 
 import styles from './App.module.scss';
+import { HeaderBurger } from 'components/HeaderBurger';
 
 export const App: React.FC = () => {
 
@@ -24,6 +25,7 @@ export const App: React.FC = () => {
 
   return (
     <>
+      <HeaderBurger />
       <div className={styles.wrapper}>
         <Header />
 

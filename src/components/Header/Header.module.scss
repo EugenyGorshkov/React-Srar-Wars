@@ -2,6 +2,10 @@
     display: flex;
     align-items: center;
     margin-bottom: var(--spacing-large);
+
+    @media screen and (max-width: 900px) {
+        display: none;
+    }
 }
 
 .list__container {
@@ -10,6 +14,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    width: 100%;
 
     & a {
         display: block;
@@ -39,4 +44,8 @@
     margin-right: var(--spacing-large);
     object-fit: cover;
     object-position: center center;
+}
+
+.loginEl {
+    margin-left: auto;
 }
