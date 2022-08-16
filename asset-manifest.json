@@ -1,10 +1,8 @@
 {
   "files": {
-    "main.css": "/React-Srar-Wars/static/css/main.1c3a148a.css",
-    "main.js": "/React-Srar-Wars/static/js/main.176e4c63.js",
-    "static/css/172.65cef3b6.chunk.css": "/React-Srar-Wars/static/css/172.65cef3b6.chunk.css",
-    "static/js/172.d3090ba3.chunk.js": "/React-Srar-Wars/static/js/172.d3090ba3.chunk.js",
-    "static/media/bg.jpg": "/React-Srar-Wars/static/media/bg.29b25be31315dad3ce4e.jpg",
+    "main.css": "/React-Srar-Wars/static/css/main.75f6803b.css",
+    "main.js": "/React-Srar-Wars/static/js/main.538acfd1.js",
+    "static/media/bg2.jpg": "/React-Srar-Wars/static/media/bg2.662bc49d6ec9dde6865a.jpg",
     "static/media/falcon.jpg": "/React-Srar-Wars/static/media/falcon.c1d0a8d1869b3fbdb9ab.jpg",
     "static/media/han-solo.mp4": "/React-Srar-Wars/static/media/han-solo.db435084c403f6b37d4d.mp4",
     "static/media/dark-side.jpg": "/React-Srar-Wars/static/media/dark-side.e0f8cab78e4bdd7db45d.jpg",
@@ -22,13 +20,11 @@
     "static/media/loader-white.svg": "/React-Srar-Wars/static/media/loader-white.ae14db7a8b62b0c3ac93bfca7d700f9f.svg",
     "index.html": "/React-Srar-Wars/index.html",
     "static/media/left-arrow.svg": "/React-Srar-Wars/static/media/left-arrow.ebbf55c9e33fb475d4546053ef9531ba.svg",
-    "main.1c3a148a.css.map": "/React-Srar-Wars/static/css/main.1c3a148a.css.map",
-    "main.176e4c63.js.map": "/React-Srar-Wars/static/js/main.176e4c63.js.map",
-    "172.65cef3b6.chunk.css.map": "/React-Srar-Wars/static/css/172.65cef3b6.chunk.css.map",
-    "172.d3090ba3.chunk.js.map": "/React-Srar-Wars/static/js/172.d3090ba3.chunk.js.map"
+    "main.75f6803b.css.map": "/React-Srar-Wars/static/css/main.75f6803b.css.map",
+    "main.538acfd1.js.map": "/React-Srar-Wars/static/js/main.538acfd1.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c3a148a.css",
-    "static/js/main.176e4c63.js"
+    "static/css/main.75f6803b.css",
+    "static/js/main.538acfd1.js"
   ]
 }
