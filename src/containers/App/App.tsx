@@ -4,10 +4,10 @@ import { Route, Routes } from 'react-router-dom';
 import { useTheme } from 'context';
 import { getLocalStorage } from 'utils';
 import { Header } from 'components/Header';
+import { HeaderBurger } from 'components/HeaderBurger';
 import { routesConfig } from 'routes';
 
 import styles from './App.module.scss';
-import { HeaderBurger } from 'components/HeaderBurger';
 
 export const App: React.FC = () => {
 

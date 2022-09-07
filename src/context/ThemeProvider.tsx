@@ -8,14 +8,21 @@ export const THEME_LIGHT = 'light'
 export const THEME_DARK = 'dark'
 export const THEME_NEITRAL = 'neitral'
 
-interface ThemeContext {
+interface IThemeContext {
     theme: string,
-    change: Function,
+    change: (arg0: string) => void,
 }
 
-const ThemeContext = React.createContext<ThemeContext | null>(null)
+interface ThemeProviderProps {
+    children: React.ReactNode,
+}
 
-export const ThemeProvider:React.FC = ({ children, ...props }) => {
+const ThemeContext = React.createContext<IThemeContext>({
+    theme: '',
+    change: () => {}
+})
+
+export const ThemeProvider:React.FC<ThemeProviderProps> = ({ children, ...props }) => {
     let key = 'theme';
     const [theme, setTheme] = useState<string>('');
 
@@ -26,14 +33,16 @@ export const ThemeProvider:React.FC = ({ children, ...props }) => {
         changeCssVaribles(name);
     }
 
+    const context: IThemeContext = {
+        theme,
+        change
+    }
+
 
 
     return (
         <ThemeContext.Provider
-            value={{
-                theme,
-                change
-            }}
+            value={context}
             {...props}
         >
             {children}

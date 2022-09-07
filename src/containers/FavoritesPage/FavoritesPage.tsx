@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 
 import { PeopleList } from 'components/PeoplePage'
+import { useTypedSelector } from 'hooks/useTypedSelector';
 
 import styles from './FavoritesPage.module.scss'
-import { useTypedSelector } from 'hooks/useTypedSelector';
 
 
 
