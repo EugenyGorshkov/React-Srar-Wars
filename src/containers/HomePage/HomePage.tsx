@@ -10,6 +10,7 @@ const HomePage: React.FC = () => {
             <h1 className='header__text'>Home Page</h1>
 
             <ChooseSide />
+            
         </>
     )
 }
